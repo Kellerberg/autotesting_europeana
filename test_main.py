@@ -5,15 +5,13 @@ from selene import be, have
 import pytest
 from selenium import webdriver
 
-main_page = 'https://www.europeana.eu/en'
-
 
 @allure.title('Open main page')
-def test_open_main_page(setup_browser, main_page):
+def test_open_main_page(setup_browser):
     browser = setup_browser
 
     with allure.step('Open main page'):
-        browser.open(main_page)
+        browser.open('https://www.europeana.eu/en')
 
 """
 @allure.step("Open main page.")
