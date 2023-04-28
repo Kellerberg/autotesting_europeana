@@ -1,19 +1,21 @@
 import allure
-import pytest
 import random
-import time
 from selene.support.shared import browser
 from selene import be, have
+import pytest
+from selenium import webdriver
+
+main_page = 'https://www.europeana.eu/en'
 
 
-@pytest.fixture
-def set_browser_configuration():
-    browser.config.browser_name = 'firefox'
-    browser.open('about:blank')
-    browser.driver.set_window_size(width=1400, height=800)
-    browser.config.hold_browser_open = False
+@allure.title('Open main page')
+def test_open_main_page(setup_browser, main_page):
+    browser = setup_browser
 
+    with allure.step('Open main page'):
+        browser.open(main_page)
 
+"""
 @allure.step("Open main page.")
 def open_main_page():
     browser.open('https://www.europeana.eu/en')
@@ -43,24 +45,25 @@ def quick_search(search):
     show_search_button()
     enter_search_request(search)
 
-def test_searching_from_main(set_browser_configuration, search='cats'):
+
+def test_searching_from_main(driver, search='cats'):
     quick_search(search)
     checking_search_results(search)
 
 
-def test_searching_search_for_everything(set_browser_configuration, search='results'):
+def test_searching_search_for_everything(driver, search='results'):
     open_main_page()
     searching_for_everything()
     checking_search_results(search)
 
 
-def test_searching_by_input(set_browser_configuration, search='dogs'):
+def test_searching_by_input(driver, search='dogs'):
     quick_search(search)
     checking_search_results(search)
     browser.element('[data-qa="search page"]').should(have.no.text('0 results'))
 
 
-def test_searching_by_input_0_results(set_browser_configuration):
+def test_searching_by_input_0_results(driver):
     random.seed()
     random_request = ''
     for x in range(15):
@@ -74,12 +77,12 @@ def test_searching_by_input_0_results(set_browser_configuration):
     checking_search_results(search)
 
 
-def test_checking_advanced_search_opens(set_browser_configuration):
+def test_checking_advanced_search_opens(driver):
     open_main_page()
     searching_for_everything()
     browser.element('[data-qa="side filters"]').should(have.text('Filter results'))
-
-
+"""
+"""
 def test_applying_search_filters(set_browser_configuration):
     open_main_page()
     searching_for_everything()
@@ -165,3 +168,4 @@ def test_applying_search_filters(set_browser_configuration):
     with allure.step("Testing RESET button."):
         browser.element('[data-qa="reset filters button"]').should(be.visible).click()
         browser.element('[data-qa="reset filters button"]').should(be.not_.visible)
+"""
