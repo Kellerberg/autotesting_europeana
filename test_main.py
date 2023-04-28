@@ -40,6 +40,7 @@ def show_search_button(setup_browser):
 @allure.step("Searching for everything.")
 def searching_for_everything(setup_browser):
     show_search_button(setup_browser)
+    browser = setup_browser
     browser.element('[data-qa="search entire collection button"]').should(be.visible).click()
 """
 @allure.step("Quick search.")
