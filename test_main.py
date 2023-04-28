@@ -5,38 +5,43 @@ from selene import be, have
 import pytest
 from selenium import webdriver
 
-
+'''
 @allure.title('Open main page')
 def test_open_main_page(setup_browser):
     browser = setup_browser
 
     with allure.step('Open main page'):
         browser.open('https://www.europeana.eu/en')
-
-"""
+'''
 @allure.step("Open main page.")
-def open_main_page():
+def open_main_page(setup_browser):
+    browser = setup_browser
     browser.open('https://www.europeana.eu/en')
 
 
 @allure.step("Entering search request.")
-def enter_search_request(search):
+def enter_search_request(setup_browser, search):
+    browser = setup_browser
     browser.element('[data-qa="search box"]').should(be.visible).click().type(search).press_enter()
 
 
 @allure.step("Checking search results.")
-def checking_search_results(search):
+def checking_search_results(setup_browser, search):
+    browser = setup_browser
     browser.element('[data-qa="search page"]').should(have.text(search))
 
 @allure.step("Show search button.")
-def show_search_button():
+def show_search_button(setup_browser):
+    browser = setup_browser
     browser.element('[data-qa="show search button"]').click()
 
-@allure.step("Searching for everything.")
-def searching_for_everything():
-    show_search_button()
-    browser.element('[data-qa="search entire collection button"]').should(be.visible).click()
 
+
+@allure.step("Searching for everything.")
+def searching_for_everything(setup_browser):
+    show_search_button(setup_browser)
+    browser.element('[data-qa="search entire collection button"]').should(be.visible).click()
+"""
 @allure.step("Quick search.")
 def quick_search(search):
     open_main_page()
@@ -47,14 +52,15 @@ def quick_search(search):
 def test_searching_from_main(driver, search='cats'):
     quick_search(search)
     checking_search_results(search)
+"""
 
 
-def test_searching_search_for_everything(driver, search='results'):
-    open_main_page()
-    searching_for_everything()
-    checking_search_results(search)
+def test_searching_search_for_everything(setup_browser, search='results'):
+    open_main_page(setup_browser)
+    searching_for_everything(setup_browser)
+    checking_search_results(setup_browser, search)
 
-
+"""
 def test_searching_by_input(driver, search='dogs'):
     quick_search(search)
     checking_search_results(search)
