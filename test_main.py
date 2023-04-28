@@ -42,25 +42,25 @@ def quick_search(setup_browser, search):
     show_search_button(setup_browser)
     enter_search_request(setup_browser, search)
 
-
+@allure.title('Searching froma main page')
 def test_searching_from_main(setup_browser, search='cats'):
     quick_search(setup_browser, search)
     checking_search_results(setup_browser, search)
 
-
+@allure.title('"Search fo everething"')
 def test_searching_search_for_everything(setup_browser, search='results'):
     open_main_page(setup_browser)
     searching_for_everything(setup_browser)
     checking_search_results(setup_browser, search)
 
-
+@allure.title('Searching by input')
 def test_searching_by_input(setup_browser, search='dogs'):
     quick_search(setup_browser, search)
     checking_search_results(setup_browser, search)
     browser = setup_browser
     browser.element('[data-qa="search page"]').should(have.no.text('0 results'))
 
-
+@allure.title('Searching by random input, zero results')
 def test_searching_by_input_0_results(setup_browser):
     random.seed()
     random_request = ''
@@ -74,14 +74,14 @@ def test_searching_by_input_0_results(setup_browser):
     search = '0 results'
     checking_search_results(setup_browser, search)
 
-
+@allure.title('Search filters in search results window')
 def test_checking_advanced_search_opens(setup_browser):
     open_main_page(setup_browser)
     searching_for_everything(setup_browser)
     browser = setup_browser
     browser.element('[data-qa="side filters"]').should(have.text('Filter results'))
 
-
+@allure.title('Advanced search testing')
 def test_applying_search_filters(setup_browser):
     open_main_page(setup_browser)
     searching_for_everything(setup_browser)
@@ -95,6 +95,7 @@ def test_applying_search_filters(setup_browser):
 
     with allure.step("Picking TYPE."):
         browser.element('[data-qa="TYPE side facet dropdown button"]').should(be.clickable).click()
+        time.sleep(2)
         browser.element('[data-qa="IMAGE TYPE field"]').should(be.clickable).click()
         time.sleep(0.5)
         browser.element('[data-qa="side filters"]').should(have.text('Image'))
