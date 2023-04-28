@@ -1,5 +1,6 @@
 import allure
 import random
+import time
 from selene import be, have
 import pytest
 
@@ -81,10 +82,10 @@ def test_checking_advanced_search_opens(setup_browser):
     browser.element('[data-qa="side filters"]').should(have.text('Filter results'))
 
 
-"""
-def test_applying_search_filters(set_browser_configuration):
-    open_main_page()
-    searching_for_everything()
+def test_applying_search_filters(setup_browser):
+    open_main_page(setup_browser)
+    searching_for_everything(setup_browser)
+    browser = setup_browser
     time.sleep(2)
     with allure.step("Picking THEME."):
         browser.element('[data-qa="collection side facet dropdown button"]').click()
@@ -167,4 +168,3 @@ def test_applying_search_filters(set_browser_configuration):
     with allure.step("Testing RESET button."):
         browser.element('[data-qa="reset filters button"]').should(be.visible).click()
         browser.element('[data-qa="reset filters button"]').should(be.not_.visible)
-"""
