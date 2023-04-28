@@ -42,18 +42,18 @@ def searching_for_everything(setup_browser):
     show_search_button(setup_browser)
     browser = setup_browser
     browser.element('[data-qa="search entire collection button"]').should(be.visible).click()
-"""
+
 @allure.step("Quick search.")
-def quick_search(search):
-    open_main_page()
-    show_search_button()
-    enter_search_request(search)
+def quick_search(setup_browser, search):
+    open_main_page(setup_browser)
+    show_search_button(setup_browser)
+    enter_search_request(setup_browser, search)
 
 
-def test_searching_from_main(driver, search='cats'):
-    quick_search(search)
-    checking_search_results(search)
-"""
+def test_searching_from_main(setup_browser, search='cats'):
+    quick_search(setup_browser, search)
+    checking_search_results(setup_browser, search)
+
 
 
 def test_searching_search_for_everything(setup_browser, search='results'):
@@ -61,32 +61,34 @@ def test_searching_search_for_everything(setup_browser, search='results'):
     searching_for_everything(setup_browser)
     checking_search_results(setup_browser, search)
 
-"""
-def test_searching_by_input(driver, search='dogs'):
-    quick_search(search)
-    checking_search_results(search)
+
+def test_searching_by_input(setup_browser, search='dogs'):
+    quick_search(setup_browser, search)
+    checking_search_results(setup_browser, search)
+    browser = setup_browser
     browser.element('[data-qa="search page"]').should(have.no.text('0 results'))
 
 
-def test_searching_by_input_0_results(driver):
+def test_searching_by_input_0_results(setup_browser):
     random.seed()
     random_request = ''
     for x in range(15):
         random_request = random_request + random.choice(list('12345678909qwertyuiopasdfghjklzxcvbnm'))
 
     search = random_request
-    open_main_page()
-    show_search_button()
-    enter_search_request(search)
+    open_main_page(setup_browser)
+    show_search_button(setup_browser)
+    enter_search_request(setup_browser, search)
     search = '0 results'
-    checking_search_results(search)
+    checking_search_results(setup_browser, search)
 
 
-def test_checking_advanced_search_opens(driver):
-    open_main_page()
-    searching_for_everything()
+def test_checking_advanced_search_opens(setup_browser):
+    open_main_page(setup_browser)
+    searching_for_everything(setup_browser)
+    browser = setup_browser
     browser.element('[data-qa="side filters"]').should(have.text('Filter results'))
-"""
+
 """
 def test_applying_search_filters(set_browser_configuration):
     open_main_page()
