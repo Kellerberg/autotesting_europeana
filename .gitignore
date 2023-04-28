@@ -128,4 +128,3 @@ dmypy.json
 # Pyre type checker
 .pyre/
 allure-results/
-test_main(model).py

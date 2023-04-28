@@ -1,18 +1,9 @@
 import allure
 import random
-from selene.support.shared import browser
 from selene import be, have
 import pytest
-from selenium import webdriver
 
-'''
-@allure.title('Open main page')
-def test_open_main_page(setup_browser):
-    browser = setup_browser
 
-    with allure.step('Open main page'):
-        browser.open('https://www.europeana.eu/en')
-'''
 @allure.step("Open main page.")
 def open_main_page(setup_browser):
     browser = setup_browser
@@ -30,11 +21,11 @@ def checking_search_results(setup_browser, search):
     browser = setup_browser
     browser.element('[data-qa="search page"]').should(have.text(search))
 
+
 @allure.step("Show search button.")
 def show_search_button(setup_browser):
     browser = setup_browser
     browser.element('[data-qa="show search button"]').click()
-
 
 
 @allure.step("Searching for everything.")
@@ -42,6 +33,7 @@ def searching_for_everything(setup_browser):
     show_search_button(setup_browser)
     browser = setup_browser
     browser.element('[data-qa="search entire collection button"]').should(be.visible).click()
+
 
 @allure.step("Quick search.")
 def quick_search(setup_browser, search):
@@ -53,7 +45,6 @@ def quick_search(setup_browser, search):
 def test_searching_from_main(setup_browser, search='cats'):
     quick_search(setup_browser, search)
     checking_search_results(setup_browser, search)
-
 
 
 def test_searching_search_for_everything(setup_browser, search='results'):
@@ -88,6 +79,7 @@ def test_checking_advanced_search_opens(setup_browser):
     searching_for_everything(setup_browser)
     browser = setup_browser
     browser.element('[data-qa="side filters"]').should(have.text('Filter results'))
+
 
 """
 def test_applying_search_filters(set_browser_configuration):
