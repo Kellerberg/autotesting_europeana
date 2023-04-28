@@ -36,6 +36,7 @@ def setup_browser(request):
             "enableVideo": True
         }
     }
+    options.add_argument("--window-size=1920,1080")
     options.capabilities.update(selenoid_capabilities)
 
     login = os.getenv('LOGIN')
