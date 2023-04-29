@@ -1,7 +1,7 @@
 import allure
 import random
 import time
-from selene import be, have
+from selene import be, by, have
 import pytest
 
 
@@ -42,16 +42,19 @@ def quick_search(setup_browser, search):
     show_search_button(setup_browser)
     enter_search_request(setup_browser, search)
 
-@allure.title('Searching froma main page')
+
+@allure.title('Searching from main page')
 def test_searching_from_main(setup_browser, search='cats'):
     quick_search(setup_browser, search)
     checking_search_results(setup_browser, search)
 
-@allure.title('"Search fo everething"')
+
+@allure.title('"Search fo everything"')
 def test_searching_search_for_everything(setup_browser, search='results'):
     open_main_page(setup_browser)
     searching_for_everything(setup_browser)
     checking_search_results(setup_browser, search)
+
 
 @allure.title('Searching by input')
 def test_searching_by_input(setup_browser, search='dogs'):
@@ -59,6 +62,7 @@ def test_searching_by_input(setup_browser, search='dogs'):
     checking_search_results(setup_browser, search)
     browser = setup_browser
     browser.element('[data-qa="search page"]').should(have.no.text('0 results'))
+
 
 @allure.title('Searching by random input, zero results')
 def test_searching_by_input_0_results(setup_browser):
@@ -74,12 +78,21 @@ def test_searching_by_input_0_results(setup_browser):
     search = '0 results'
     checking_search_results(setup_browser, search)
 
+
 @allure.title('Search filters in search results window')
 def test_checking_advanced_search_opens(setup_browser):
     open_main_page(setup_browser)
     searching_for_everything(setup_browser)
     browser = setup_browser
     browser.element('[data-qa="side filters"]').should(have.text('Filter results'))
+
+
+@allure.title('Links testing')
+def test_following_links(setup_browser):
+    open_main_page(setup_browser)
+    browser = setup_browser
+    browser.element()
+
 
 @allure.title('Advanced search testing')
 def test_applying_search_filters(setup_browser):
@@ -169,3 +182,21 @@ def test_applying_search_filters(setup_browser):
     with allure.step("Testing RESET button."):
         browser.element('[data-qa="reset filters button"]').should(be.visible).click()
         browser.element('[data-qa="reset filters button"]').should(be.not_.visible)
+
+
+@allure.title('Following links')
+def test_following_links(setup_browser):
+    browser = setup_browser
+    open_main_page(setup_browser)
+    with allure.step("Collections"):
+        browser.element(by.css('.nav-link-icon.icon-collections')).s('..').click()
+        browser.element('data-qa="page title"').should(have.text('Collections'))
+    with allure.step("Stories"):
+        browser.element(by.css('.nav-link-icon icon-stories')).s('..').click()
+        browser.element('data-qa="page title"').should(have.text('Stories'))
+    with allure.step("For professionals"):
+        browser.element(by.css('.nav-link-icon icon-pro')).s('..').click()
+        browser.element('data-qa="title"').should(have.text('For professionals'))
+    with allure.step("Log in / Join"):
+        browser.element(by.css('nav-link-icon icon-login')).s('..').click()
+        browser.element('id="kc-page-title"').should(have.text('Log in'))
