@@ -190,13 +190,13 @@ def test_following_links(setup_browser):
     open_main_page(setup_browser)
     with allure.step("Collections"):
         browser.element(by.css('.nav-link-icon.icon-collections')).s('..').click()
-        browser.element('data-qa="page title"').should(have.text('Collections'))
+        browser.element('[data-qa="page title"]').should(have.text('Collections'))
     with allure.step("Stories"):
         browser.element(by.css('.nav-link-icon icon-stories')).s('..').click()
-        browser.element('data-qa="page title"').should(have.text('Stories'))
+        browser.element('[data-qa="page title"]').should(have.text('Stories'))
     with allure.step("For professionals"):
         browser.element(by.css('.nav-link-icon icon-pro')).s('..').click()
-        browser.element('data-qa="title"').should(have.text('For professionals'))
+        browser.element('[data-qa="title"]').should(have.text('For professionals'))
     with allure.step("Log in / Join"):
         browser.element(by.css('nav-link-icon icon-login')).s('..').click()
-        browser.element('id="kc-page-title"').should(have.text('Log in'))
+        browser.element('[id="kc-page-title"]').should(have.text('Log in'))
