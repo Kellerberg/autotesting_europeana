@@ -187,16 +187,19 @@ def test_applying_search_filters(setup_browser):
 @allure.title('Following links')
 def test_following_links(setup_browser):
     browser = setup_browser
-    open_main_page(setup_browser)
     with allure.step("Collections"):
+        open_main_page(setup_browser)
         browser.element(by.css('.nav-link-icon.icon-collections')).s('..').click()
         browser.element('[data-qa="page title"]').should(have.text('Collections'))
     with allure.step("Stories"):
+        open_main_page(setup_browser)
         browser.element(by.css('.nav-link-icon icon-stories')).s('..').click()
         browser.element('[data-qa="page title"]').should(have.text('Stories'))
     with allure.step("For professionals"):
+        open_main_page(setup_browser)
         browser.element(by.css('.nav-link-icon icon-pro')).s('..').click()
         browser.element('[data-qa="title"]').should(have.text('For professionals'))
     with allure.step("Log in / Join"):
+        open_main_page(setup_browser)
         browser.element(by.css('nav-link-icon icon-login')).s('..').click()
         browser.element('[id="kc-page-title"]').should(have.text('Log in'))
