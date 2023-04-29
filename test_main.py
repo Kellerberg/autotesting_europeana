@@ -108,7 +108,7 @@ def test_applying_search_filters(setup_browser):
 
     with allure.step("Picking TYPE."):
         browser.element('[data-qa="TYPE side facet dropdown button"]').should(be.clickable).click()
-        time.sleep(2)
+        time.sleep(3)
         browser.element('[data-qa="IMAGE TYPE field"]').should(be.clickable).click()
         time.sleep(0.5)
         browser.element('[data-qa="side filters"]').should(have.text('Image'))
@@ -201,5 +201,5 @@ def test_following_links(setup_browser):
         browser.element('[data-qa="title"]').should(have.text('For professionals'))
     with allure.step("Log in / Join"):
         open_main_page(setup_browser)
-        browser.element(by.css('nav-link-icon.icon-login')).s('..').click()
+        browser.element(by.css('.nav-link-icon.icon-login')).s('..').click()
         browser.element('[id="kc-page-title"]').should(have.text('Log in'))
