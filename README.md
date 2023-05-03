@@ -1,4 +1,4 @@
-<h2>Autotesting of Europeana web encyclopedia.</h2>
+# Autotesting of Europeana web encyclopedia
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="images/europeana_logo_DARKMODE.svg">
@@ -44,7 +44,7 @@
 
 ## Project overview
 
-This autotesting suite is a practice project created during Python automation training courses at QA GURU computer science school. The main goal is to showcase and improve the author's test automation skills by implementing tests for the Europeana web encyclopedia. The suite covers the main functionality of the site, including links, login, search, and language switching.
+This autotesting suite is a practice project created during Python automation training courses at QA.GURU computer science school. The main goal is to showcase and improve the author's test automation skills by implementing tests for the Europeana web encyclopedia. The suite covers the main functionality of the site, including links, login, search, language switching, and others.
 
 The project uses Python, pytest, and Selenium frameworks for test automation, as well as Allure Reports and Allure TestOps for reporting and test management. Selenoid is used for running tests in a containerized environment. Jenkins is integrated for continuous integration and delivery.
 
