@@ -37,3 +37,8 @@
     <li><a href="#contributions">Contributions</a></li>
   </p>
 </details>
+
+## Introduction
+
+  Welcome to the Europeana autotesting suite, a project created during my Python automation training at QA.GURU computer science school. The main goal of this project is to demonstrate my current skills in software testing and to learn and practice new techniques. The project is built using Python and PyCharm IDE, and new tests will be added as they are developed. While not all site content will be covered by the tests, the suite showcases the necessary skills for software testing and quality assurance. This project will continue to grow and evolve over time, so stay tuned for updates! :sunglasses:
+
