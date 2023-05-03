@@ -49,3 +49,45 @@ This autotesting suite is a practice project created during Python automation tr
 The project uses Python, pytest, and Selenium frameworks for test automation, as well as Allure Reports and Allure TestOps for reporting and test management. Selenoid is used for running tests in a containerized environment. Jenkins is integrated for continuous integration and delivery.
 
 The project is open source and can be accessed on GitHub. Contributions are welcome, and the author plans to continue adding new features and documenting the project to help future automators.
+
+## Technologies and Tools Used
+
+<table align="center">
+<tr>
+<td>
+<a href="https://www.python.org/">
+<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/python.svg" width="50" height="50">
+</a>
+</td>
+<td>
+<a href="https://docs.pytest.org/">
+<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/pytest.svg" width="50" height="50">
+</a>
+</td>
+<td>
+<a href="https://www.selenium.dev/">
+<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/selenium.svg" width="50" height="50">
+</a>
+</td>
+<td>
+<a href="https://www.jenkins.io/">
+<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/jenkins.svg" width="50" height="50">
+</a>  
+</td>
+<td>
+<a href="https://aerokube.com/selenoid/latest/">  
+<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/selenoid.svg" width="50" height="50">
+</a>
+</td>
+<td>
+<a href="https://qameta.io/allure-report/">  
+<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/allurereport.svg" width="50" height="50">
+</a>
+</td>
+<td>
+<a href="https://qameta.io/">  
+<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/alluretestops.svg" width="50" height="50">
+</a>
+</td>
+</tr>
+<table>
