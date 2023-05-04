@@ -61,3 +61,29 @@ The project is open source and can be accessed on GitHub. Contributions are welc
 
 <br><b>Why using Allure?</b><br>
 Allure Reports is an open-source framework that generates interactive reports with detailed information about test runs. It provides clear test execution results with easy-to-read graphics, logs, and failure details. The reports can be accessed via a web browser or viewed as an HTML file. We utilize Allure Reports in our project to provide a clear and concise summary of the test runs and their results.
+
+### Allure Reports
+ 
+ <table>
+  <tr><td align="center" colspan="2"><b>Allure Reports main page</b></td></tr>
+  <tr>
+   <td align="center">
+    <img src="https://github.com/Kellerberg/autotesting_europeana/blob/master/images/allure-report_1.png">
+   </td>
+   <td>The main page of the Allure report provides an overview of the test execution results. It displays the total number of test cases, as well as the number and percentage of successful, failed and broken tests. It also includes a summary of the test suite and test environment information, and so on.</td>
+  <tr><td align="center" colspan="2"><b>Allure Reports Suites page</b></td></tr>
+  <tr>
+   <td align="center">
+    <img src="https://github.com/Kellerberg/autotesting_europeana/blob/master/images/allure-report_2.png">
+   </td>
+   <td>The Suites page in Allure reports provides an overview of all test suites and their status, including the number of successful, failed, and broken tests. It also displays the date and time of passing the test and offers the option to view detailed reports for each test case, including logs, screenshots, and videos.</td>
+ </table>
+  
+ <table>
+  <tr><td><b>Test run video</b><br>
+   This video demonstrates the execution of a test from our automated test suite. The test verifies the performance of the links on Europeana's main page by clicking on each link and checking the content of the page it leads to. The video has been edited to showcase the test's steps and results.
+  </td></tr>
+  <tr><td>
+  <img src="https://github.com/Kellerberg/autotesting_europeana/blob/master/video/following_links_testing.gif">
+  </td></tr>
+ </table>
