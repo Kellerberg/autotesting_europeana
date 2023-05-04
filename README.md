@@ -1,4 +1,4 @@
-# Autotesting of Europeana web encyclopedia
+# Autotesting of Europeana web encyclopedia <br>
 
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="images/europeana_logo_DARKMODE.svg">
@@ -7,7 +7,7 @@
 </picture>
 
 <details open>
-  <summary>Contents [hide/show]</summary>
+  <summary> <h3>Contents</h3> [hide/show]</summary>
   <ul>
    <li><a href="#introduction">Introduction</a></li>
    <li><a href="#project-overview">Project Overview</a></li>
