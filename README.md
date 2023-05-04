@@ -38,56 +38,39 @@
   </p>
 </details>
 
-## Introduction
+ ## Introduction
 
   Welcome to the Europeana autotesting suite, a project created during my Python automation training at QA.GURU computer science school. The main goal of this project is to demonstrate my current skills in software automated testing and to learn and practice new techniques. The project is built using mainly Python and PyCharm IDE, and new tests will be added as they are developed. While not all site content will be covered by the tests, the suite showcases the necessary skills for software automated testing and quality assurance. This project will continue to grow and evolve over time, so stay tuned for updates! :sunglasses:
 
-## Project overview
+ ## Project overview
 
 This autotesting suite is a practice project created during Python automation training courses at QA.GURU computer science school. The main goal is to showcase and improve the author's test automation skills by implementing tests for the Europeana web encyclopedia. The suite covers the main functionality of the site, including links, login, search, language switching, and others.
 
-The project uses Python, pytest, and Selenium frameworks for test automation, as well as Allure Reports and Allure TestOps for reporting and test management. Selenoid is used for running tests in a containerized environment. Jenkins is integrated for continuous integration and delivery.
+The project uses Python, Pytest, and Selenium frameworks for test automation, as well as Allure Reports and Allure TestOps for reporting and test management. Selenoid is used for running tests in a containerized environment. Jenkins is integrated for continuous integration and delivery.
 
 The project is open source and can be accessed on GitHub. Contributions are welcome, and the author plans to continue adding new features and documenting the project to help future automators.
 
-## Technologies and Tools Used
+ ## Technologies and Tools Used
 
-<table align="center">
-<tr>
-<td>
-<a href="https://www.python.org/">
-<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/python.svg" width="50" height="50">
-</a>
-</td>
-<td>
-<a href="https://docs.pytest.org/">
-<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/pytest.svg" width="50" height="50">
-</a>
-</td>
-<td>
-<a href="https://www.selenium.dev/">
-<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/selenium.svg" width="50" height="50">
-</a>
-</td>
-<td>
-<a href="https://www.jenkins.io/">
-<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/jenkins.svg" width="50" height="50">
-</a>  
-</td>
-<td>
-<a href="https://aerokube.com/selenoid/latest/">  
-<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/selenoid.svg" width="50" height="50">
-</a>
-</td>
-<td>
-<a href="https://qameta.io/allure-report/">  
-<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/allurereport.svg" width="50" height="50">
-</a>
-</td>
-<td>
-<a href="https://qameta.io/">  
-<img src="https://github.com/Kellerberg/Kellerberg/blob/main/images/alluretestops.svg" width="50" height="50">
-</a>
-</td>
-</tr>
-<table>
+<table align="center"><tr>
+<td width= "150" align="center"><a href="https://www.python.org/">
+ <img alt="Python" src="https://github.com/Kellerberg/Kellerberg/blob/main/images/python.svg" width="50" height="50"><br><b>Python</b></a></td>
+<td width= "150" align="center"><a href="https://docs.pytest.org/">
+ <img alt="Pytest" src="https://github.com/Kellerberg/Kellerberg/blob/main/images/pytest.svg" width="50" height="50"><br><b>Pytest</b></a></td>
+<td width= "150" align="center"><a href="https://www.selenium.dev/">
+ <img alt="Selenium" src="https://github.com/Kellerberg/Kellerberg/blob/main/images/selenium.svg" width="50" height="50"><br><b>Selenium</b></a></td>
+<td width= "150" align="center"><a href="https://www.jenkins.io/">
+ <img alt="Jenkins" src="https://github.com/Kellerberg/Kellerberg/blob/main/images/jenkins.svg" width="50" height="50"><br><b>Jenkins</b></a></td>
+<td width= "150" align="center"><a href="https://aerokube.com/selenoid/">
+ <img alt="Selenoid" src="https://github.com/Kellerberg/Kellerberg/blob/main/images/selenoid.svg" width="50" height="50"><br><b>Selenoid</b></a></td>
+<td width= "150" align="center"><a href="https://qameta.io/allure-report/">
+ <img alt="Allure Report" src="https://github.com/Kellerberg/Kellerberg/blob/main/images/allurereport.svg" width="50" height="50"><br><b>Allure Report</b></a></td>
+<td width= "150" align="center"><a href="https://qameta.io/">
+ <img alt="Allure TestOps" src="https://github.com/Kellerberg/Kellerberg/blob/main/images/alluretestops.svg" width="50" height="50"><br><b>Allure TestOps</b></a></td>
+</tr><table>
+
+ ## Getting Started <b>[UNDER CONSTRUCTION]</b>
+ 
+  ### Prerequisites
+  ### Installation
+  ### Running the tests
